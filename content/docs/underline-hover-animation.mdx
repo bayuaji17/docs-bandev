@@ -1,0 +1,34 @@
+---
+title: "Animated Underline Heading"
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+
+<Tabs items={["Preview", "Code"]}>
+<Tab value="Preview">
+  <div className="flex justify-center">
+    <div className="bg-fd-card dark:bg-fd-card border rounded-lg shadow-md p-6">
+      <h1 className="inline-block cursor-pointer group mb-2">
+        <span className="relative inline-block font-bold text-xl">
+          Hover Me
+          <span className="absolute left-0 bottom-5 h-0.5 w-full origin-left scale-x-0 bg-fd-foreground transition-transform duration-300 group-hover:scale-x-100"></span>
+        </span>
+      </h1>
+    </div>
+  </div>
+</Tab>
+
+{" "}
+
+<Tab value="Code">
+  ```jsx
+  <h1 className="inline-block cursor-pointer group mb-2">
+    <span className="relative inline-block z-10 font-bold text-xl">
+      Midnight Elegance
+      <span className="absolute left-0 bottom-0 h-0.5 w-full origin-left scale-x-0 bg-black transition-transform duration-300 group-hover:scale-x-100"></span>
+    </span>
+  </h1>
+  ```
+</Tab>
+
+</Tabs>
