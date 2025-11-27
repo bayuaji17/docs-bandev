@@ -2,7 +2,19 @@
 title: "Animated Underline Heading"
 ---
 
+This animated underline heading effect works by combining several Tailwind utilities:
+
+- `group` and `group-hover:*` to trigger the animation.
+- `origin-left | origin-center | origin-right` to define the starting point of the scale animation.
+- `bottom-*` to control spacing between the text and the animated underline.
+- `h-*` to adjust the underline thickness.
+
+The base demo is shown first, followed by multiple variants for each parameter.
+
+## Base Demo
+
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+import { Callout } from "fumadocs-ui/components/callout";
 
 <Tabs items={["Preview", "Code"]}>
 <Tab value="Preview">
@@ -24,7 +36,7 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
   ```jsx
   <h1 className="inline-block cursor-pointer group mb-2">
     <span className="relative inline-block z-10 font-bold text-xl">
-      Midnight Elegance
+      Hover Me
       <span className="absolute left-0 bottom-0 h-0.5 w-full origin-left scale-x-0 bg-black transition-transform duration-300 group-hover:scale-x-100"></span>
     </span>
   </h1>
@@ -32,3 +44,176 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 </Tab>
 
 </Tabs>
+
+## Variants:
+
+<Callout type="info">
+  The <code>origin-*</code> classes control where the underline animation starts
+  scaling from.
+</Callout>
+
+### 1. Origin Left (default)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center mb-4">
+      <h2 className="inline-block cursor-pointer group mb-2">
+        <span className="relative inline-block font-semibold text-lg">
+          Origin Left
+          <span className="absolute left-0 bottom-1 h-0.5 w-full origin-left scale-x-0 bg-blue-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </span>
+      </h2>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```jsx
+    <span className="absolute left-0 bottom-1 h-0.5 w-full origin-left scale-x-0 bg-blue-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+    ```
+  </Tab>
+</Tabs>
+
+### 2. Origin Center
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center mb-4">
+      <h2 className="inline-block cursor-pointer group mb-2">
+        <span className="relative inline-block font-semibold text-lg">
+          Origin Center
+          <span className="absolute left-0 bottom-1 h-0.5 w-full origin-center scale-x-0 bg-green-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </span>
+      </h2>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```jsx
+    <span className="absolute left-0 bottom-1 h-0.5 w-full origin-center scale-x-0 bg-green-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+    ```
+  </Tab>
+</Tabs>
+
+### 3. Origin Right
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <div className="flex justify-center mb-4">
+      <h2 className="inline-block cursor-pointer group mb-2">
+        <span className="relative inline-block font-semibold text-lg">
+          Origin Right
+          <span className="absolute left-0 bottom-1 h-0.5 w-full origin-right scale-x-0 bg-red-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+        </span>
+      </h2>
+    </div>
+  </Tab>
+  <Tab value="Code">
+    ```jsx
+    <span className="absolute left-0 bottom-1 h-0.5 w-full origin-right scale-x-0 bg-red-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Spacing Variant: `bottom-*`
+
+<Callout type="info">
+  The <code>bottom-x</code> value adjusts the vertical distance between the text
+  and the animated underline. Larger values push the underline lower.
+</Callout>
+
+<Tabs items={["Preview", "Code"]}>
+<Tab value="Preview">
+  <div className="space-y-6">
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Bottom 0
+        <span className="absolute left-0 bottom-0 h-0.5 w-full scale-x-0 bg-purple-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Bottom 2
+        <span className="absolute left-0 bottom-2 h-0.5 w-full scale-x-0 bg-purple-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Bottom 4
+        <span className="absolute left-0 bottom-4 h-0.5 w-full scale-x-0 bg-purple-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+  </div>
+</Tab>
+
+<Tab value="Code">
+```jsx
+// bottom-0
+<span className="absolute left-0 bottom-0 h-0.5 ..."></span>
+
+// bottom-2
+
+<span className="absolute left-0 bottom-2 h-0.5 ..."></span>
+
+// bottom-4
+
+<span className="absolute left-0 bottom-4 h-0.5 ..."></span>
+```
+</Tab>
+</Tabs>
+
+---
+
+## Thickness Variant: `h-*`
+
+<Tabs items={["Preview", "Code"]}>
+<Tab value="Preview">
+  <div className="space-y-6">
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Height 0.5
+        <span className="absolute left-0 bottom-1 h-0.5 w-full scale-x-0 bg-amber-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Height 1
+        <span className="absolute left-0 bottom-1 h-1 w-full scale-x-0 bg-amber-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+    <div className="flex justify-center">
+      <h3 className="group relative inline-block font-medium text-lg">
+        Height 2
+        <span className="absolute left-0 bottom-1 h-2 w-full scale-x-0 bg-amber-500 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+      </h3>
+    </div>
+
+  </div>
+</Tab>
+
+<Tab value="Code">
+```jsx
+// h-0.5
+<span className="absolute left-0 bottom-1 h-0.5 ..."></span>
+
+// h-1
+
+<span className="absolute left-0 bottom-1 h-1 ..."></span>
+
+// h-2
+
+<span className="absolute left-0 bottom-1 h-2 ..."></span>
+```
+</Tab>
+</Tabs>
+
+---
+
+## Summary
+
+By combining `origin-*`, `bottom-*`, and `h-*`, you can fully customize the underline animation for different heading styles.  
+All variants above can be mixed and matched to create expressive, dynamic hover effects.

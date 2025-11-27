@@ -18,7 +18,6 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
 
   const MDX = page.data.body;
   const lastModified = page.data.lastModified
-  console.log(page.data)
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>

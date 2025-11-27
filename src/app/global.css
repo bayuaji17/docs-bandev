@@ -1,6 +1,41 @@
 @import "tailwindcss";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
+@utility bg-hero-fog {
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(241, 223, 190, 0.2) 40%,
+    rgba(241, 223, 190, 0.8) 100%
+  );
+}
+
+@utility bg-hero-fog-dark {
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* .bg-hero-fog {
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(241, 223, 190, 0.2) 40%,
+    rgba(241, 223, 190, 0.8) 100%
+  );
+}
+.bg-hero-fog-dark {
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+} */
+
 :root {
   --color-fd-background: oklch(0.91 0.048 83.6);
   --color-fd-foreground: oklch(0.41 0.077 78.9);

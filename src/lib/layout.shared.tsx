@@ -11,13 +11,6 @@ export function baseOptions(): BaseLayoutProps {
         </div>
       ),
     },
-    // githubUrl: 'https://github.com',
-    // links: [
-    //   {
-    //     type: 'main',
-    //     text: 'Documentation',
-    //     url: '/docs',
-    //   },
-    // ],
+    githubUrl: 'https://github.com/bayuaji17/docs-bandev',
   };
 }
